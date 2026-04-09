@@ -1,8 +1,11 @@
 /* ==========================================================================
    AL-RAHIM TEXTILE INDUSTRIES — STYLES
+   This file contains the component-level and layout styles for the website.
+   It relies on design tokens defined in tokens.css for consistency.
    ========================================================================== */
 
 /* ---------- BASE ---------- */
+/* Global resets and base typography settings */
 
 *,
 *::before,
@@ -52,6 +55,7 @@ a:hover {
 }
 
 /* ---------- LAYOUT SECTIONS ---------- */
+/* Reusable section containers with consistent padding and backgrounds */
 
 .section {
   padding: var(--space-4xl) 0;
@@ -97,6 +101,7 @@ a:hover {
 }
 
 /* ---------- TYPOGRAPHY ---------- */
+/* Global typographic components and utility classes */
 
 .display-title {
   font-size: var(--font-size-display);
@@ -152,6 +157,7 @@ a:hover {
 }
 
 /* ---------- BUTTONS ---------- */
+/* Standardized button components with brand-specific styling */
 
 .brand-btn {
   display: inline-block;
@@ -231,6 +237,7 @@ a:hover {
 }
 
 /* ---------- NAVBAR ---------- */
+/* Site-wide navigation bar with scroll effects and brand logo sizing */
 
 .site-navbar {
   background-color: var(--bg-white);
@@ -301,6 +308,7 @@ a:hover {
 }
 
 /* ---------- HERO SECTION ---------- */
+/* High-impact landing page section with background imagery and key CTAs */
 
 .hero-section {
   position: relative;
@@ -377,42 +385,6 @@ a:hover {
 }
 
 /* Page hero (inner pages) */
-/* .page-hero {
-  position: relative;
-  padding: var(--space-4xl) 0 var(--space-3xl);
-  background: 
-  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-  url('../images/page-hero.webp') no-repeat center center/cover;
-  color: var(--text-light);
-}
-
-.page-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 50px,
-      rgba(255, 255, 255, 0.012) 50px,
-      rgba(255, 255, 255, 0.012) 51px
-    );
-  pointer-events: none;
-}
-
-.page-hero h1 {
-  font-size: var(--font-size-display);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-tight);
-  position: relative;
-  z-index: 1;
-} */
-
 .page-hero {
   position: relative;
   padding: var(--space-4xl) 0 var(--space-3xl);
@@ -484,6 +456,7 @@ a:hover {
 }
 
 /* ---------- CARD: FEATURE ---------- */
+/* Reusable feature cards with hover effects and brand-colored icons */
 
 .card-feature {
   background: var(--bg-white);
@@ -517,20 +490,6 @@ a:hover {
   margin-bottom: var(--space-lg);
 }
 
-/* .card-feature h3 {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-dark);
-  margin-bottom: var(--space-sm);
-}
-
-.card-feature p {
-  font-size: var(--font-size-sm);
-  color: var(--text-muted);
-  line-height: var(--line-height-relaxed);
-  margin-bottom: 0;
-} */
-
 .feature-stat {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
@@ -549,6 +508,7 @@ a:hover {
 }
 
 /* ---------- CARD: PRODUCT ---------- */
+/* Cards for displaying products with image containers and descriptive text */
 
 .card-product {
   background: var(--bg-white);
@@ -599,36 +559,7 @@ a:hover {
 }
 
 /* ---------- STAT ITEM ---------- */
-
-/* .stat-item {
-  text-align: center;
-  padding: var(--space-xl);
-  border-right: 1px solid rgba(255,255,255,0.1);
-}
-
-.stat-item .stat-number {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  font-weight: var(--font-weight-bold);
-  color: var(--brand-primary);
-  line-height: 1;
-  margin-bottom: var(--space-sm);
-}
-
-.stat-item .stat-label {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--text-muted);
-}
-
-.section-dark .stat-item .stat-number {
-  color: var(--brand-secondary);
-}
-
-.section-dark .stat-item .stat-label {
-  color: var(--text-on-dark);
-} */
+/* Numerical statistics display with responsive grid separators */
 
 .section-dark .row {
   --bs-gutter-x: 0;
@@ -693,73 +624,7 @@ a:hover {
 }
 
 /* ---------- PROCESS FLOW ---------- */
-
-/* .process-flow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0;
-  flex-wrap: wrap;
-  padding: var(--space-2xl) 0;
-}
-
-@media (max-width: 768px) {
-  .process-flow {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .process-step::after {
-    display: block;
-    width: 2px;
-    height: 30px;
-    left: 50%;
-    top: 70px;
-  }
-}
-
-.process-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  flex: 1;
-  min-width: 120px;
-  padding: 0 var(--space-sm);
-}
-
-.process-step .step-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  font-size: 1.5rem;
-  margin-bottom: var(--space-md);
-  position: relative;
-  z-index: 2;
-}
-
-.process-step .step-label {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-dark);
-}
-
-.process-step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: calc(50% + 40px);
-  width: calc(100% - 80px);
-  height: 2px;
-  background: var(--bg-muted);
-  z-index: 1;
-} */
+/* Visual representation of manufacturing steps with connecting lines */
 
 .process-flow {
   display: flex;
@@ -848,6 +713,7 @@ a:hover {
 }
 
 /* ---------- CLIENT STRIP ---------- */
+/* Grayscale client logo strip that transitions to color on hover */
 
 .client-strip {
   display: flex;
@@ -857,19 +723,6 @@ a:hover {
   flex-wrap: wrap;
   padding: var(--space-lg) 0;
 }
-
-/* .client-badge {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--text-muted);
-  padding: var(--space-sm) var(--space-lg);
-  border: 1px solid var(--bg-muted);
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-  transition: all var(--transition-fast);
-} */
 
 .client-badge {
   display: flex;
@@ -889,11 +742,6 @@ a:hover {
   filter: grayscale(100%);
   transition: all 0.3s ease;
 }
-
-/* .client-badge:hover {
-  border-color: var(--brand-primary);
-  color: var(--brand-primary);
-} */
 
 .client-badge:hover img {
   opacity: 1;
@@ -922,6 +770,7 @@ a:hover {
 }
 
 /* ---------- CTA SECTION ---------- */
+/* High-visibility Call-To-Action section with brand gradient background */
 
 .cta-section {
   padding: var(--space-4xl) 0;
@@ -957,6 +806,7 @@ a:hover {
 }
 
 /* ---------- FOOTER ---------- */
+/* Multi-column site footer with contact info, social links, and legal info */
 
 .site-footer {
   background-color: var(--bg-dark);
@@ -1034,6 +884,7 @@ a:hover {
 }
 
 /* ---------- CERTIFICATION GRID ---------- */
+/* Grid for displaying industrial certification badges */
 
 .cert-grid {
   display: flex;
@@ -1066,6 +917,7 @@ a:hover {
 }
 
 /* ---------- LEADER CARD ---------- */
+/* Executive leadership profile cards */
 
 .leader-card {
   text-align: center;
@@ -1108,6 +960,7 @@ a:hover {
 }
 
 /* ---------- SPECIALTY CARD ---------- */
+/* Focus cards for specialized product lines or services */
 
 .card-specialty {
   background: var(--bg-white);
@@ -1138,6 +991,7 @@ a:hover {
 }
 
 /* ---------- FORM STYLES ---------- */
+/* Custom styled form inputs with focus states and brand colors */
 
 .form-control,
 .form-select {
@@ -1163,6 +1017,7 @@ a:hover {
 }
 
 /* ---------- SUSTAINABILITY METRIC ---------- */
+/* Large metric cards for highlighting environmental goals and progress */
 
 .metric-card {
   text-align: center;
@@ -1200,6 +1055,7 @@ a:hover {
   }
 }
 /* ---------- POLICY SECTION ---------- */
+/* Formatting for corporate policy text blocks and list items */
 
 .policy-block {
   margin-bottom: var(--space-3xl);
@@ -1225,6 +1081,7 @@ a:hover {
 }
 
 /* ---------- MAP PLACEHOLDER ---------- */
+/* Placeholder for Google Maps or other embedded locations */
 
 .map-placeholder {
   width: 100%;
@@ -1239,6 +1096,7 @@ a:hover {
 }
 
 /* ---------- UTILITY CLASSES ---------- */
+/* Generic utility classes for layout and typography adjustments */
 
 .body-text {
   color: var(--text-body);
@@ -1261,6 +1119,7 @@ a:hover {
 }
 
 /* ---------- RESPONSIVE ---------- */
+/* Breakpoint-specific adjustments for various screen sizes */
 
 @media (max-width: 991.98px) {
   .display-title {

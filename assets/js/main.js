@@ -4,6 +4,10 @@
   /* ------ Navbar scroll effect ------ */
   const navbar = document.querySelector(".site-navbar");
   if (navbar) {
+    /**
+     * Toggles the 'scrolled' class on the navbar based on the window's vertical scroll position.
+     * @returns {void}
+     */
     const onScroll = () => {
       navbar.classList.toggle("scrolled", window.scrollY > 50);
     };
@@ -16,6 +20,13 @@
   ).matches;
 
   /* ------ Active nav link ------ */
+  /**
+   * Normalizes a URL path by removing hashes, query parameters, and trailing slashes.
+   * If the path is empty, it defaults to 'index.html'.
+   *
+   * @param {string} value - The raw URL path or href string to normalize.
+   * @returns {string} The normalized filename or 'index.html'.
+   */
   function normalizePath(value) {
     var clean = (value || "").split("#")[0].split("?")[0].replace(/\/+$/, "");
     return clean.split("/").pop() || "index.html";
@@ -42,6 +53,13 @@
   }
 
   /* ------ Counter animation ------ */
+  /**
+   * Animates a numerical counter from zero to a target value specified in the element's data attributes.
+   * Supports decimal values, custom suffixes, and respect for reduced motion preferences.
+   *
+   * @param {HTMLElement} el - The DOM element containing counter data attributes (data-count, data-suffix).
+   * @returns {void}
+   */
   function animateCounter(el) {
     if (el.dataset.animated) return;
 
@@ -53,6 +71,10 @@
     var duration = 1800;
     var startTime = null;
 
+    /**
+     * Formats the final target value for display based on whether it is a decimal or a large number.
+     * @returns {string} The formatted final counter value.
+     */
     function formatFinalValue() {
       if (isDecimal) return target.toFixed(1) + suffix;
       if (target >= 1000) return target.toLocaleString() + suffix;
@@ -67,12 +89,22 @@
 
     el.dataset.animated = "true";
 
+    /**
+     * Formats an intermediate value during the animation.
+     * @param {number} value - The current raw value of the counter.
+     * @returns {string} The formatted value for display.
+     */
     function formatValue(value) {
       if (isDecimal) return value.toFixed(1) + suffix;
       if (target >= 1000) return Math.floor(value).toLocaleString() + suffix;
       return Math.floor(value) + suffix;
     }
 
+    /**
+     * The animation step function called by requestAnimationFrame.
+     * @param {number} timestamp - The current time provided by requestAnimationFrame.
+     * @returns {void}
+     */
     function step(timestamp) {
       if (!startTime) startTime = timestamp;
       var progress = Math.min((timestamp - startTime) / duration, 1);
@@ -114,6 +146,12 @@
   }
 
   /* ------ Form validation ------ */
+  /**
+   * Sets up an event listener for form submission to handle validation and display a success state.
+   *
+   * @param {string} formId - The ID of the form element to handle.
+   * @returns {void}
+   */
   function setupFormHandler(formId) {
     var form = document.getElementById(formId);
     if (!form) return;
