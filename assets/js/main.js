@@ -16,13 +16,16 @@
   ).matches;
 
   /* ------ Active nav link ------ */
-  const path = window.location.pathname.replace(/\/+$/, "");
-  const currentPath = path.split("/").pop() || "index.html";
+  function normalizePath(value) {
+    var clean = (value || "").split("#")[0].split("?")[0].replace(/\/+$/, "");
+    return clean.split("/").pop() || "index.html";
+  }
+
+  const currentPath = normalizePath(window.location.pathname);
 
   document.querySelectorAll(".site-navbar .nav-link").forEach(function (link) {
-    const href = (link.getAttribute("href") || "").split("#")[0].split("?")[0];
-    const normalizedHref = href.replace(/\/+$/, "") || "index.html";
-    link.classList.toggle("active", normalizedHref === currentPath);
+    const href = link.getAttribute("href") || "";
+    link.classList.toggle("active", normalizePath(href) === currentPath);
   });
 
   /* ------ Mobile menu auto-close ------ */
