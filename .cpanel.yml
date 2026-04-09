@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/octaooiu/alviglobal.com/al-rahim-textile
+    - /bin/cp -R * $DEPLOYPATH
