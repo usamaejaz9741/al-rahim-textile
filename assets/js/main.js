@@ -34,73 +34,72 @@
   }
 
   /* ------ Counter animation ------ */
-  function animateCounters() {
-    document.querySelectorAll('[data-count]').forEach(function (el) {
-      if (el.dataset.animated) return;
-  
-      var target = parseFloat(el.dataset.count);
-      var suffix = el.dataset.suffix || '';
-      var isDecimal = target % 1 !== 0;
-      var duration = 1800;
-      var startTime = null;
-  
-      el.dataset.animated = 'true';
-  
-      function formatValue(value) {
-        if (isDecimal) {
-          return value.toFixed(1) + suffix;
-        } else if (target >= 1000) {
-          return Math.floor(value).toLocaleString() + suffix;
-        } else {
-          return Math.floor(value) + suffix;
-        }
+  function animateCounter(el) {
+    if (el.dataset.animated) return;
+
+    var target = parseFloat(el.dataset.count);
+    var suffix = el.dataset.suffix || '';
+    var isDecimal = target % 1 !== 0;
+    var duration = 1800;
+    var startTime = null;
+
+    el.dataset.animated = 'true';
+
+    function formatValue(value) {
+      if (isDecimal) {
+        return value.toFixed(1) + suffix;
+      } else if (target >= 1000) {
+        return Math.floor(value).toLocaleString() + suffix;
+      } else {
+        return Math.floor(value) + suffix;
       }
-  
-      function formatFinalValue() {
-        if (isDecimal) {
-          return target.toFixed(1) + suffix;
-        } else if (target >= 1000) {
-          return target.toLocaleString() + suffix;
-        } else {
-          return target + suffix;
-        }
+    }
+
+    function formatFinalValue() {
+      if (isDecimal) {
+        return target.toFixed(1) + suffix;
+      } else if (target >= 1000) {
+        return target.toLocaleString() + suffix;
+      } else {
+        return target + suffix;
       }
-  
-      function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        var progress = Math.min((timestamp - startTime) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        var current = eased * target;
-  
-        el.textContent = formatValue(current);
-  
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = formatFinalValue();
-        }
+    }
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = eased * target;
+
+      el.textContent = formatValue(current);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = formatFinalValue();
       }
-  
-      requestAnimationFrame(step);
-    });
+    }
+
+    requestAnimationFrame(step);
   }
-  
+
   if ('IntersectionObserver' in window) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          animateCounters();
-          observer.disconnect();
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.2 });
-  
-    var statsSection = document.querySelector('[data-count]');
-    if (statsSection) {
-      observer.observe(statsSection.closest('section') || statsSection);
-    }
+
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      observer.observe(el);
+    });
   } else {
-    animateCounters();
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      animateCounter(el);
+    });
   }
 
   /* ------ Form validation ------ */
