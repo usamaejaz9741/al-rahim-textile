@@ -16,12 +16,13 @@
   ).matches;
 
   /* ------ Active nav link ------ */
-  const path = window.location.pathname.replace(/\/+$/, "");
-  const currentPath = path.split("/").pop() || "index.html";
+  const path = window.location.pathname.replace(/\.html$/, "").replace(/\/+$/, "");
+  const currentPath = path.split("/").pop() || "index";
 
   document.querySelectorAll(".site-navbar .nav-link").forEach(function (link) {
     const href = (link.getAttribute("href") || "").split("#")[0].split("?")[0];
-    const normalizedHref = href.replace(/\/+$/, "") || "index.html";
+    const normalizedHref =
+      href.replace(/\.html$/, "").replace(/\/+$/, "") || "index";
     link.classList.toggle("active", normalizedHref === currentPath);
   });
 

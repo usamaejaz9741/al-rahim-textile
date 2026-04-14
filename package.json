@@ -1,0 +1,13 @@
+{
+  "name": "al-rahim-textile-tests",
+  "version": "1.0.0",
+  "description": "Tests for Al-Rahim Textile Industries website",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "http-server": "^14.1.1",
+    "playwright": "^1.59.1"
+  },
+  "scripts": {
+    "test": "playwright test"
+  }
+}
