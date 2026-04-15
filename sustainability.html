@@ -158,36 +158,121 @@
     </div>
   </section>
 
-  <!-- EMISSIONS -->
-  <section class="section">
+  <!-- LEADING IN SUSTAINABILITY -->
+  <style>
+    .sustainability-board {
+      background: var(--bg-white);
+      border: 1px solid #f0e6df;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .sustainability-board-item {
+      padding: 3.5rem;
+    }
+    .sustainability-board-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md, 14px);
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      color: var(--text-light);
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .sustainability-policy-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md, 14px);
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      color: var(--text-light);
+      font-size: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .board-br-md { border-right: 1px solid #f0e6df; }
+      .board-bb-md { border-bottom: 1px solid #f0e6df; }
+    }
+    @media (max-width: 767px) {
+      .board-bb-sm { border-bottom: 1px solid #f0e6df; }
+      .sustainability-board-item { padding: 2rem; }
+    }
+  </style>
+
+  <section class="section" style="padding-top: 3rem; padding-bottom: 3rem;">
     <div class="container">
       <div class="text-center mb-5">
-        <span class="section-label">Emissions</span>
-        <h2 class="section-title">Science-Based Targets (SBTi Approved)</h2>
-        <p class="section-subtitle mx-auto">Our emissions reduction targets are approved by the Science Based Targets
-          initiative, aligned with the 1.5&deg;C pathway to net-zero.</p>
+        <span class="section-label">Responsible Production &bull; Environmental Stewardship</span>
+        <h2 class="section-title">Leading in Sustainability</h2>
       </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-4 col-md-6">
-          <div class="card-feature text-center">
-            <div class="feature-icon mx-auto"><i class="bi bi-arrow-down-circle"></i></div>
-            <h3>47.6% Reduction</h3>
-            <p>Scope 1 &amp; 2 emissions by 2031  covering direct operations and purchased energy.</p>
+      
+      <div class="sustainability-board">
+        <div class="row g-0">
+          
+          <!-- Item 1 -->
+          <div class="col-md-6 board-br-md board-bb-md board-bb-sm">
+            <div class="sustainability-board-item h-100">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="sustainability-board-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                <span class="badge rounded-pill bg-light text-dark border px-3 py-2 mt-2" style="font-weight: 500; letter-spacing: 0.5px;">VALIDATED</span>
+              </div>
+              <div class="text-uppercase fw-bold text-muted mb-2" style="font-size: 0.85rem; letter-spacing: 1.5px;">Climate Action</div>
+              <h3 class="mb-1" style="color: var(--text-dark); font-size: 2rem; font-weight: 700;">Science-Aligned</h3>
+              <div class="text-uppercase fw-semibold text-muted mb-4 mt-2" style="font-size: 0.85rem; letter-spacing: 1px;">Carbon Footprint Targets</div>
+              <hr class="opacity-25 my-4" style="border-color: var(--text-muted);">
+              <p class="text-muted mb-0" style="font-size: 1rem; line-height: 1.7;">Comprehensive Scope 1, 2 &amp; 3 targets approved and validated for measurable climate impact reduction.</p>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-feature text-center">
-            <div class="feature-icon mx-auto"><i class="bi bi-arrow-down-circle"></i></div>
-            <h3>40% Reduction</h3>
-            <p>Scope 3 emissions by 2031  covering supply chain and value chain emissions.</p>
+
+          <!-- Item 2 -->
+          <div class="col-md-6 board-bb-md board-bb-sm">
+            <div class="sustainability-board-item h-100">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="sustainability-board-icon"><i class="bi bi-droplet"></i></div>
+                <span class="badge rounded-pill bg-light text-dark border px-3 py-2 mt-2" style="font-weight: 500; letter-spacing: 0.5px;">EFFICIENCY</span>
+              </div>
+              <div class="text-uppercase fw-bold text-muted mb-2" style="font-size: 0.85rem; letter-spacing: 1.5px;">Water Stewardship</div>
+              <h3 class="mb-1" style="color: var(--text-dark); font-size: 2rem; font-weight: 700;">75% Reuse</h3>
+              <div class="text-uppercase fw-semibold text-muted mb-4 mt-2" style="font-size: 0.85rem; letter-spacing: 1px;">Via Advanced ETP</div>
+              <hr class="opacity-25 my-4" style="border-color: var(--text-muted);">
+              <p class="text-muted mb-0" style="font-size: 1rem; line-height: 1.7;">Working towards AWS certification by 2026 in strategic partnership with WWF for responsible water management.</p>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card-feature text-center">
-            <div class="feature-icon mx-auto"><i class="bi bi-thermometer-half"></i></div>
-            <h3>1.5&deg;C Pathway</h3>
-            <p>Net-zero aligned with the most ambitious climate science targets.</p>
+
+          <!-- Item 3 -->
+          <div class="col-md-6 board-br-md board-bb-sm">
+            <div class="sustainability-board-item h-100">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="sustainability-board-icon"><i class="bi bi-shield-check"></i></div>
+                <span class="badge rounded-pill bg-light text-dark border px-3 py-2 mt-2" style="font-weight: 500; letter-spacing: 0.5px;">COMPLIANCE</span>
+              </div>
+              <div class="text-uppercase fw-bold text-muted mb-2" style="font-size: 0.85rem; letter-spacing: 1.5px;">Chemical Safety</div>
+              <h3 class="mb-1" style="color: var(--text-dark); font-size: 2rem; font-weight: 700;">Zero Discharge</h3>
+              <div class="text-uppercase fw-semibold text-muted mb-4 mt-2" style="font-size: 0.85rem; letter-spacing: 1px;">ZDHC Commitment</div>
+              <hr class="opacity-25 my-4" style="border-color: var(--text-muted);">
+              <p class="text-muted mb-0" style="font-size: 1rem; line-height: 1.7;">Strict adherence to ZDHC Zero Discharge protocols ensuring elimination of hazardous chemicals from supply chain.</p>
+            </div>
           </div>
+
+          <!-- Item 4 -->
+          <div class="col-md-6">
+            <div class="sustainability-board-item h-100">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="sustainability-board-icon"><i class="bi bi-sun"></i></div>
+                <span class="badge rounded-pill bg-light text-dark border px-3 py-2 mt-2" style="font-weight: 500; letter-spacing: 0.5px;">TARGET 2026</span>
+              </div>
+              <div class="text-uppercase fw-bold text-muted mb-2" style="font-size: 0.85rem; letter-spacing: 1.5px;">Renewable Energy</div>
+              <h3 class="mb-1" style="color: var(--text-dark); font-size: 2rem; font-weight: 700;">60% Clean</h3>
+              <div class="text-uppercase fw-semibold text-muted mb-4 mt-2" style="font-size: 0.85rem; letter-spacing: 1px;">Energy Mix by 2026</div>
+              <hr class="opacity-25 my-4" style="border-color: var(--text-muted);">
+              <p class="text-muted mb-0" style="font-size: 1rem; line-height: 1.7;">Aggressive transition to wind and solar power to minimize carbon footprint and energy dependence.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -230,27 +315,79 @@
   <!-- ENVIRONMENTAL POLICY -->
   <section class="section">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="policy-block">
-            <h2>Environmental Policy</h2>
-            <p class="body-text">We, Al-Rahim Textile
-              Industries, manufacturer of terry products, strive to create a clean environment in all our activities,
-              products, and services by committing ourselves to:</p>
-            <ul>
-              <li>Conserve natural resources through reuse, recycle, and reduce</li>
-              <li>Prevent pollution through effective control measures</li>
-              <li>Comply with all applicable legal requirements</li>
-              <li>Work towards continual improvements in our environmental performance</li>
-              <li>Communicate the policy to all company staff and interested parties</li>
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <span class="section-label">Our Guiding Principles</span>
+          <h2 class="section-title">Environmental Policy</h2>
+          <p class="section-subtitle mx-auto">We, Al-Rahim Textile Industries, manufacturer of terry products, strive to create a clean environment in all our activities, products, and services by committing ourselves to high standards.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Commitments -->
+        <div class="col-md-6">
+          <div class="h-100 p-4 p-md-5" style="background-color: var(--bg-white); border: 1px solid #f0e6df; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.03);">
+            <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
+              <div class="sustainability-policy-icon me-4">
+                <i class="bi bi-bookmark-star"></i>
+              </div>
+              <h3 class="mb-0" style="color: var(--text-dark); font-weight: 700; font-size: 1.5rem;">Our Commitments</h3>
+            </div>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+              <li class="d-flex align-items-start">
+                <i class="bi bi-check2 text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Conserve natural resources through reuse, recycle, and reduce</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-check2 text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Prevent pollution through effective control measures</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-check2 text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Comply with all applicable legal requirements</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-check2 text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Work towards continual improvements in our environmental performance</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-check2 text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Communicate the policy to all company staff and interested parties</span>
+              </li>
             </ul>
-            <p class="body-text"><strong>Our Goals:</strong></p>
-            <ul>
-              <li>Reduce the quantity of polluting substances discharged into the environment</li>
-              <li>Increase the use of environmentally acceptable materials</li>
-              <li>Use modern equipment and technology in place of those considered harmful</li>
-              <li>Minimize the impact of all activities on our surroundings</li>
-              <li>Recycle and reuse products wherever possible</li>
+          </div>
+        </div>
+
+        <!-- Goals -->
+        <div class="col-md-6">
+          <div class="h-100 p-4 p-md-5" style="background-color: var(--bg-white); border: 1px solid #f0e6df; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.03);">
+            <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
+              <div class="sustainability-policy-icon me-4">
+                <i class="bi bi-bullseye"></i>
+              </div>
+              <h3 class="mb-0" style="color: var(--text-dark); font-weight: 700; font-size: 1.5rem;">Our Goals</h3>
+            </div>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+              <li class="d-flex align-items-start">
+                <i class="bi bi-arrow-right-short text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Reduce the quantity of polluting substances discharged into the environment</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-arrow-right-short text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Increase the use of environmentally acceptable materials</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-arrow-right-short text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Use modern equipment and technology in place of those considered harmful</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-arrow-right-short text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Minimize the impact of all activities on our surroundings</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-arrow-right-short text-muted me-3 mt-1" style="font-size: 1.2rem;"></i>
+                <span class="text-muted">Recycle and reuse products wherever possible</span>
+              </li>
             </ul>
           </div>
         </div>
