@@ -461,6 +461,18 @@ a:hover {
   transform: translate(-50%, -50%) scale(1.1) !important;
 }
 
+.video-thumbnail-link {
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.video-thumbnail-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.video-thumbnail-link:hover div {
+  background: rgba(0,0,0,0.15) !important;
+}
+
 /* ---------- VIDEO CONTAINER ---------- */
 .video-container {
   position: relative;
@@ -740,22 +752,63 @@ a:hover {
   }
 }
 
-/* ---------- CLIENT STRIP ---------- */
+/* ---------- CLIENT STRIP / SLIDER ---------- */
 /* Grayscale client logo strip that transitions to color on hover */
 
+.client-slider {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  position: relative;
+}
+
+.client-slider::before,
+.client-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.client-slider::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.client-slider::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-white) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
 .client-strip {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: var(--space-2xl);
-  flex-wrap: wrap;
   padding: var(--space-lg) 0;
+  animation: slide 30s linear infinite;
+}
+
+.client-strip:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - var(--space-2xl)/2));
+  }
 }
 
 .client-badge {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   padding: var(--space-sm) var(--space-lg);
   border: 1px solid var(--bg-muted);
   border-radius: var(--radius-sm);
@@ -766,14 +819,13 @@ a:hover {
 .client-badge img {
   height: 28px;
   width: auto;
-  opacity: 0.7;
-  filter: grayscale(100%);
+  max-width: none;
+  opacity: 1;
   transition: all 0.3s ease;
 }
 
 .client-badge:hover img {
-  opacity: 1;
-  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
 .client-badge:hover {
