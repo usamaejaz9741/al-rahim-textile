@@ -997,14 +997,13 @@ a:hover {
   margin-bottom: var(--space-xs);
 }
 
-.site-footer .footer-social a {
+.footer-social a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
-  border: 2px solid transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--text-on-dark);
   margin-right: var(--space-sm);
@@ -1012,9 +1011,9 @@ a:hover {
   font-size: var(--font-size-sm);
 }
 
-.site-footer .footer-social a:hover {
-  border-color: var(--brand-primary);
-  color: var(--brand-primary);
+.footer-social a:hover {
+  border-color: var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
 }
 
 .site-footer .footer-bottom {
