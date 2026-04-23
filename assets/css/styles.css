@@ -549,6 +549,41 @@ a:hover {
 /* ---------- CARD: PRODUCT ---------- */
 /* Cards for displaying products with image containers and descriptive text */
 
+.product-category-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-dark);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  width: 100%;
+}
+
+.products-col-divider {
+  position: relative;
+}
+
+.products-col {
+  border: 1px solid #e8ddd5;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  background: var(--bg-white);
+  height: 100%;
+}
+
+@media (min-width: 992px) {
+  .products-col-divider::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: 0;
+    width: 2px;
+    height: 90%;
+    background: linear-gradient(to bottom, transparent, var(--brand-primary) 20%, var(--brand-primary) 80%, transparent);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(211, 131, 58, 0.35), 0 0 20px rgba(211, 131, 58, 0.15);
+  }
+}
+
 .card-product {
   background: var(--bg-white);
   border-radius: var(--radius-md);
@@ -564,7 +599,7 @@ a:hover {
 }
 
 .card-product .product-img {
-  height: 220px;
+  height: 160px;
   background: linear-gradient(135deg, var(--bg-muted) 0%, var(--bg-light) 100%);
   display: flex;
   align-items: center;
@@ -580,18 +615,18 @@ a:hover {
 }
 
 .card-product .product-body {
-  padding: var(--space-lg) var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
 }
 
 .card-product h3 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--text-dark);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 .card-product p {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--text-muted);
   line-height: var(--line-height-relaxed);
   margin-bottom: 0;
