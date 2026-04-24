@@ -338,17 +338,77 @@ a:hover {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  animation: heroFade 16s ease-in-out infinite;
+  transition: opacity 1.5s ease-in-out, transform 2s ease-in-out;
+  transform: scale(1.05);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .hero-slide:nth-child(1) {
   background-image: url('../images/hero-bg.webp');
-  animation-delay: 0s;
 }
 
 .hero-slide:nth-child(2) {
-  background-image: url('../images/page-hero.webp');
-  animation-delay: 8s;
+  background-image: url('../images/factory-hero.png');
+}
+
+.hero-slide:nth-child(3) {
+  background-image: url('../images/products/bedding-hero.png');
+}
+
+.hero-slide:nth-child(4) {
+  background-image: url('../images/finishing-hero.png');
+}
+
+/* Slider Controls */
+.hero-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--space-xl);
+  pointer-events: none; /* allow clicking through to hero content */
+  z-index: 10;
+}
+
+.hero-control-btn {
+  pointer-events: auto; /* re-enable clicks for buttons */
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.hero-control-btn:hover {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .hero-controls {
+    padding: 0 var(--space-md);
+  }
+  .hero-control-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 
 @keyframes heroFade {

@@ -204,7 +204,73 @@
             block: "start",
           });
         }
-      });
     });
+  });
 
-  })();
+  /* ------ Hero Slider Logic ------ */
+  const slides = document.querySelectorAll(".hero-slide");
+  const nextBtn = document.querySelector(".hero-control-btn.next");
+  const prevBtn = document.querySelector(".hero-control-btn.prev");
+  let currentSlide = 0;
+  let slideInterval;
+
+  if (slides.length > 0) {
+    /**
+     * Changes the current slide to the specified index.
+     * @param {number} index - The index of the slide to display.
+     * @returns {void}
+     */
+    const showSlide = (index) => {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add("active");
+    };
+
+    /**
+     * Advances to the next slide.
+     * @returns {void}
+     */
+    const nextSlide = () => showSlide(currentSlide + 1);
+    
+    /**
+     * Goes back to the previous slide.
+     * @returns {void}
+     */
+    const prevSlide = () => showSlide(currentSlide - 1);
+
+    /**
+     * Starts the automatic slide transition.
+     * @returns {void}
+     */
+    const startAutoSlide = () => {
+      stopAutoSlide();
+      slideInterval = setInterval(nextSlide, 7000);
+    };
+
+    /**
+     * Stops the automatic slide transition.
+     * @returns {void}
+     */
+    const stopAutoSlide = () => {
+      if (slideInterval) clearInterval(slideInterval);
+    };
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        startAutoSlide();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        startAutoSlide();
+      });
+    }
+
+    // Initialize auto-slide
+    startAutoSlide();
+  }
+
+})();
