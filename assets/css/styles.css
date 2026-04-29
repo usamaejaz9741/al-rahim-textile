@@ -352,15 +352,31 @@ a:hover {
 }
 
 .hero-slide:nth-child(2) {
-  background-image: url('../images/factory-hero.png');
+  background-image: url('../images/factory-hero.webp');
 }
 
 .hero-slide:nth-child(3) {
-  background-image: url('../images/products/bedding-hero.png');
+  background-image: url('../images/products/bedding-hero.webp');
 }
 
 .hero-slide:nth-child(4) {
-  background-image: url('../images/finishing-hero.png');
+  background-image: url('../images/finishing-hero.webp');
+}
+
+.hero-slide:nth-child(5) {
+  background-image: url('../images/new-hero-1.webp');
+}
+
+.hero-slide:nth-child(6) {
+  background-image: url('../images/new-hero-2.webp');
+}
+
+.hero-slide:nth-child(7) {
+  background-image: url('../images/new-hero-3.webp');
+}
+
+.hero-slide:nth-child(8) {
+  background-image: url('../images/new-hero-4.webp');
 }
 
 /* Slider Controls */
