@@ -1413,5 +1413,52 @@ a:hover {
   }
 }
 
+/* ---------- SUSTAINABILITY BOARD ---------- */
 
+.sustainability-board {
+  background: var(--bg-white);
+  border: 1px solid #f0e6df;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.sustainability-board-item {
+  padding: 3.5rem;
+}
+
+.sustainability-board-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md, 14px);
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  color: var(--text-light);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sustainability-policy-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md, 14px);
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  color: var(--text-light);
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .board-br-md { border-right: 1px solid #f0e6df; }
+  .board-bb-md { border-bottom: 1px solid #f0e6df; }
+}
+
+@media (max-width: 767px) {
+  .board-bb-sm { border-bottom: 1px solid #f0e6df; }
+  .sustainability-board-item { padding: 2rem; }
+}
 
