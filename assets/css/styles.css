@@ -936,7 +936,7 @@ a:hover {
 
 @media (max-width: 425px) {
   .client-strip {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 16px; /* spacing between logos */
   }
