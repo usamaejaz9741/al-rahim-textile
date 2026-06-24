@@ -1,8 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/octaooiu/alviglobal.com/al-rahim-textile/
-    - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -R index.html $DEPLOYPATH
-    - /bin/cp -R .htaccess $DEPLOYPATH
-    - /bin/cp -R energized-dragon-073129.framer.app $DEPLOYPATH
+    - /bin/echo "Repository is already in the document root. No copy needed."
