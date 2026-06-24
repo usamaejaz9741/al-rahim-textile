@@ -11,6 +11,22 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
 # ----------------------------------------------------------------------------
+# Serve local HTTrack/Framer mirror folder while keeping preview.alviglobal.com in address bar
+# This uses the LOCAL folder: energized-dragon-073129.framer.app/
+# ----------------------------------------------------------------------------
+
+# Homepage: internally serve the mirrored index.html without redirecting
+RewriteRule ^$ energized-dragon-073129.framer.app/index.html [L]
+
+# For assets/pages requested from the root URL, load them from the mirror folder
+# only when they are not already real files/folders at the root.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/energized-dragon-073129.framer.app%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/energized-dragon-073129.framer.app%{REQUEST_URI} -d
+RewriteRule ^(.+)$ energized-dragon-073129.framer.app/$1 [L]
+
+# ----------------------------------------------------------------------------
 # Custom Error Pages
 # ----------------------------------------------------------------------------
 ErrorDocument 404 /404.html
