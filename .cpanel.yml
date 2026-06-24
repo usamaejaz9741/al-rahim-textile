@@ -1,4 +1,4 @@
----
 deployment:
   tasks:
-    - /bin/echo "Repository is already in the document root. No copy needed."
+    - export DEPLOYPATH=/home/octaooiu/alviglobal.com/al-rahim-textile
+    - /bin/cp -R * $DEPLOYPATH
